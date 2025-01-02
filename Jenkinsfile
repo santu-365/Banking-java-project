@@ -1,42 +1,42 @@
-pipeline{
+pipeline {
     agent any
-    stages{
-        stage('checkout the code from github'){
-            steps{
-                 git url: 'https://github.com/akshu20791/Banking-java-project/'
-                 echo 'github url checkout'
+    stages {
+        stage('Checkout the code from GitHub') {
+            steps {
+                git url: 'https://github.com/santu-365/Banking-java-project/'
+                echo 'GitHub URL checkout'
             }
         }
-        stage('codecompile with akshat'){
-            steps{
-                echo 'starting compiling'
+        stage('Code compile with Santu') {
+            steps {
+                echo 'Starting compilation'
                 sh 'mvn compile'
             }
         }
-        stage('codetesting with akshat'){
-            steps{
+        stage('Code testing with Santu') {
+            steps {
                 sh 'mvn test'
             }
         }
-        stage('qa with akshat'){
-            steps{
+        stage('QA with Santu') {
+            steps {
                 sh 'mvn checkstyle:checkstyle'
             }
         }
-        stage('package with akshat'){
-            steps{
+        stage('Package with Santu') {
+            steps {
                 sh 'mvn package'
             }
         }
-        stage('run dockerfile'){
-          steps{
-               sh 'docker build -t myimg .'
-           }
-         }
-        stage('port expose'){
-            steps{
+        stage('Run Dockerfile') {
+            steps {
+                sh 'docker build -t myimg .'
+            }
+        }
+        stage('Port expose') {
+            steps {
                 sh 'docker run -dt -p 8091:8091 --name c000 myimg'
             }
-        }   
+        }
     }
 }
