@@ -301,7 +301,3 @@ Implement Blue-Green / Canary deployments
 Project by Santosh Teli (santu-365)
 📧 Email: stgt365@gmail.com
 🌐 GitHub: santu-365
-
-📞 Mobile: 9980842365
-🆔 Aadhaar: 2426 3460 1500
-🌐 GitHub: santu-365
